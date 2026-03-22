@@ -1,0 +1,16 @@
+containers:
+  - name: my-python-app
+    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    imagePullPolicy: {{ .Values.image.pullPolicy }}
+    ports:
+      - containerPort: {{ .Values.containerPort }}
+      metadata:
+  labels:
+    app: my-python-app
+    selector:
+  matchLabels:
+    app: my-python-app
+    template:
+  metadata:
+    labels:
+      app: my-python-app

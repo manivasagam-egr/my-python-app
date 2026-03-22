@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: asia-south1-docker.pkg.dev/devops-demo-project-491008/my-repo/my-python-app
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+containerPort: 8080
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "200m"
+    memory: "256Mi"
